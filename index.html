@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whac a Mole</title>
+    <link rel="stylesheet" href="mole.css"> <!-- Link to external CSS file -->
+</head>
+<body>
+    <h2 id="score">Score: 0</h2> <!-- Display the score -->
+    <h2 id="highScore">High Score: 0</h2> <!-- Display the high score -->
+    <h3 id="timer">Timer: 60</h3> <!-- Display the timer -->
+    
+    <div id="board"></div> <!-- The game board where tiles are displayed -->
+    
+    <!-- Select duration dropdown -->
+    <label for="durationSelect" id="durationLabel">Select Duration:</label>
+    <select id="durationSelect" name="durationSelect">
+        <option value="60">1 minute</option>
+        <option value="120">2 minutes</option>
+        <option value="180">3 minutes</option>
+        <!-- Add more options as needed -->
+    </select>
+    
+    <!-- Select difficulty dropdown -->
+    <label for="difficultySelect" id="difficultyLabel">Select Difficulty:</label>
+    <select id="difficultySelect" name="difficultySelect">
+        <option value="1">Easy</option>
+        <option value="2">Medium</option>
+        <option value="3">Hard</option>
+    </select>
+    
+    <!-- Volume control slider -->
+    <label for="volumeSlider" id="volumeLabel">Volume:</label>
+    <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1" onchange="updateVolume(this.value)">
+    
+    <!-- Start game button -->
+    <button id="startButton"><b>Start Game</b></button>
+    
+    <!-- Audio elements for game sounds -->
+    <audio id="hitSound" src="./metal-whoosh-hit-10-202176.mp3" preload="auto"></audio>
+    <audio id="gameOverSound" src="./game-over-arcade-6435.mp3" preload="auto"></audio>
+    
+    <!-- Script to add event listener to start button and update volume -->
+    <script src="mole.js"></script> <!-- Link to external JavaScript file -->
+    <script>
+        document.getElementById("startButton").addEventListener("click", startGame);
+       
+        function updateVolume(volume) {
+            document.getElementById("hitSound").volume = volume; // Set hit sound volume
+            document.getElementById("gameOverSound").volume = volume; // Set game over sound volume
+        }
+    </script>
+    
+    <div id="achievementNotification"></div> <!-- Display achievement notifications -->
+</body>
+</html>

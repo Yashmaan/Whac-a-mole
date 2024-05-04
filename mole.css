@@ -1,0 +1,157 @@
+
+h1 {
+    font-size: 3rem; /* Large font size */
+    margin-top: 20px; /* Add some top margin */
+}
+
+h2, h3 {
+    top: 150px; /* Set the distance from the top of the window to 10 pixels */
+    left: 500px; /* Set the distance from the left of the window to 10 pixels */
+    font-size: 2rem; /* Larger font size */
+    color: black;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background: url("./whack-a-mole.png");
+    background-size: cover;
+    background-position: 100px 0; /* 10px right, 0 vertical */
+}
+
+#board {
+    width: 540px;
+    height: 540px;
+    /* background-color: green; */
+
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+
+    background: url("./soil.png");
+    background-size: cover;
+    border: 3px solid white;
+    border-radius: 25px;
+}
+
+#board div {
+    /* board = 540 x 540, divide into 3x3 tiles --> 180 x 180 per div */
+    width: 180px; 
+    height: 180px;
+    background-image: url("./pipe.png");
+    background-size: cover;
+}
+
+#board div img {
+    /* all img tags inside tiles */
+    width: 100px;
+    height: 100px;
+
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+select {
+    position: absolute; /* Set the positioning to absolute */
+    top: 180px; /* Set the distance from the top of the window to 10 pixels */
+    right: 125px; /* Set the distance from the left of the window to 10 pixels */
+    padding: 8px 15px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color: #fff;
+    color: #333;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 8px top 50%;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* CSS */
+#startButton {
+    width: 225px; /* Set the width to 200 pixels */
+    height: 120px; /* Set the height to 50 pixels */
+    position: fixed;
+    top: 525px;
+    right: 155px;
+    z-index: 999; /* Ensure the button is above other elements */
+    border-radius: 20px; /* Adjust the value to create the desired pill shape */
+    font-size: 40px;
+}
+
+#durationLabel {
+    font-size: 2rem; /* Larger font size */
+    position: absolute; /* Set the positioning to absolute */
+    top: 185px; /* Set the distance from the top of the window to 10 pixels */
+    left: 1035px; /* Set the distance from the left of the window to 10 pixels */
+    color: blue;
+    
+}
+
+#volumeLabel {
+    font-size: 2rem; /* Larger font size */
+    position: absolute; /* Set the positioning to absolute */
+    top: 50px; /* Set the distance from the top of the window to 10 pixels */
+    left: 100px; /* Set the distance from the left of the window to 10 pixels */
+    color: black;
+    
+}
+
+#volumeSlider{
+    position: absolute; /* Set the positioning to absolute */
+    top: 60px; /* Set the distance from the top of the window to 10 pixels */
+    left: 230px; /* Set the distance from the left of the window to 10 pixels */
+    color: white;
+}
+
+#highScore{
+    position: absolute; /* Set the positioning to absolute */
+   top: 0px; /* Set the distance from the top of the window to 10 pixels */
+    right: 10px; /* Set the distance from the left of the window to 10 pixels */ 
+}
+
+
+#difficultySelect {
+    top: 120px; /* Set the distance from the top of the window to 10 pixels */
+    right: 125px; /* Set the distance from the left of the window to 10 pixels */
+}
+
+#difficultyLabel {
+    font-size: 2rem; /* Larger font size */
+    position: absolute; /* Set the positioning to absolute */
+    top: 125px; /* Set the distance from the top of the window to 10 pixels */
+    left: 1035px; /* Set the distance from the left of the window to 10 pixels */
+    color: blue;
+    
+}
+
